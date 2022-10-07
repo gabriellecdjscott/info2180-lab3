@@ -24,6 +24,15 @@ window.addEventListener("load",function(){
 
       
       });
+
+     squares[a].addEventListener('mouseover',function(){
+     	squares[a].classList.add("hover")
+     });
+
+     squares[a].addEventListener('mouseleave',function(){
+     	squares[a].classList.remove("hover")
+     })
+
      	}
 
 
