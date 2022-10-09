@@ -3,8 +3,9 @@ window.addEventListener("load",function(){
 	var board = document.getElementById("board");
 	var squares = board.getElementsByTagName("div");
 	var counter=0;
-	var arr = ["","","","","","","","","",];
-	console.log(counter);
+	var arr = ["g","a","b","r","i","e","l","l","e"];
+	var status= document.getElementById("status")
+	
 	for(let a = 0; a < squares.length; a++){
       
       squares[a].classList.add("square")
@@ -13,11 +14,26 @@ window.addEventListener("load",function(){
      		counter++
      		squares[a].textContent='X'
      		squares[a].classList.add('X');
+     		arr.splice( a, 1, 10 );
+     		console.log(arr)
+
+     		if (arr[0]+arr[1]+arr[2] == 30 || arr[3]+arr[4]+arr[5] == 30 || arr[6]+arr[7]+arr[8] == 30 || arr[0]+arr[3]+arr[6] == 30 || arr[1]+arr[3]+arr[6] == 30 || arr[2]+arr[5]+arr[8] == 30 || arr[0]+arr[4]+arr[8] == 30 || arr[2]+arr[4]+arr[6] == 30){
+     			status.textContent="Congratulations!X is the Winner!"
+     			status.classList.add('you-won')	
+     		}
      	}
      	else{
      		counter++
      		squares[a].textContent='O'
      		squares[a].classList.add('O');
+     		arr.splice( a, 1, 20 );
+     		console.log(arr)
+     		if (arr[0]+arr[1]+arr[2] == 60 || arr[3]+arr[4]+arr[5] == 60 || arr[6]+arr[7]+arr[8] == 60 || arr[0]+arr[3]+arr[6] == 60 || arr[1]+arr[3]+arr[6] == 60 || arr[2]+arr[5]+arr[8] == 60 || arr[0]+arr[4]+arr[8] == 60 || arr[2]+arr[4]+arr[6] == 60){
+     			status.textContent="Congratulations!O is the Winner!"
+     			status.classList.add('you-won')
+     		}
+
+
      	}
 
 	
@@ -32,6 +48,8 @@ window.addEventListener("load",function(){
      squares[a].addEventListener('mouseleave',function(){
      	squares[a].classList.remove("hover")
      })
+
+
 
      	}
 
