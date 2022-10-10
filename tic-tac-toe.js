@@ -5,6 +5,8 @@ window.addEventListener("load",function(){
 	var counter=0;
 	var arr = ["g","a","b","r","i","e","l","l","e"];
 	var status= document.getElementById("status")
+	var newgame= document.getElementsByTagName("button")
+
 	
 	for(let a = 0; a < squares.length; a++){
       
@@ -41,6 +43,8 @@ window.addEventListener("load",function(){
       
       });
 
+
+
      squares[a].addEventListener('mouseover',function(){
      	squares[a].classList.add("hover")
      });
@@ -52,6 +56,22 @@ window.addEventListener("load",function(){
 
 
      	}
+
+
+     	newgame[0].addEventListener('click',function(){
+     		for(let a = 0; a < squares.length; a++){
+     			squares[a].className="square"
+     			squares[a].textContent=""
+     			arr = ["g","a","b","r","i","e","l","l","e"]
+     			status.textContent="Move your mouse over a square and click to play an X or an O."
+     			status.className=""
+     			counter=0
+
+
+
+     		}
+
+     	});
 
 
 
