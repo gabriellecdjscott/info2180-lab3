@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
       
       squares[a].classList.add("square")
      squares[a].addEventListener('click',function(){
-     	if (counter%2==0){
+     	if (counter%2==0 && squares[a].textContent==""){
      		counter++
      		squares[a].textContent='X'
      		squares[a].classList.add('X');
@@ -22,9 +22,10 @@ window.addEventListener("load",function(){
      		if (arr[0]+arr[1]+arr[2] == 30 || arr[3]+arr[4]+arr[5] == 30 || arr[6]+arr[7]+arr[8] == 30 || arr[0]+arr[3]+arr[6] == 30 || arr[1]+arr[3]+arr[6] == 30 || arr[2]+arr[5]+arr[8] == 30 || arr[0]+arr[4]+arr[8] == 30 || arr[2]+arr[4]+arr[6] == 30){
      			status.textContent="Congratulations!X is the Winner!"
      			status.classList.add('you-won')	
+
      		}
      	}
-     	else{
+     	else if ( squares[a].textContent==""){
      		counter++
      		squares[a].textContent='O'
      		squares[a].classList.add('O');
@@ -66,6 +67,9 @@ window.addEventListener("load",function(){
      			status.textContent="Move your mouse over a square and click to play an X or an O."
      			status.className=""
      			counter=0
+
+
+
 
 
 
